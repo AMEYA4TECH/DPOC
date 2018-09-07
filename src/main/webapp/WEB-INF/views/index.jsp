@@ -532,7 +532,7 @@
 							</div>
 							<div class="col-lg-12">
 <div class="ibox float-e-margins">
-								<div class="ibox-title">Sales Chart</div>
+								<div class="ibox-title">Transportation Chart</div>
 								<div class="ibox-content">
 								<button type="button" id="download-pdfSales" >
   														Download PDF
@@ -1319,7 +1319,7 @@ $.getJSON( "getMonthlyOrderCount/", function( json ) {
 						    options: {
 						      title: {
 						        display: true,
-						        text: 'Sales Across Different Traders'
+						        text: 'Transportation Across Different Traders'
 						      }
 						    }
 						});
@@ -1415,7 +1415,7 @@ $.getJSON( "getMonthlyOrderCount/", function( json ) {
 
 		 document
 		 .getElementById('download-pdfSales')
-		 .addEventListener("click", downloadPDF.bind(this, "salesChart", "Sales-chart"));
+		 .addEventListener("click", downloadPDF.bind(this, "salesChart", "Transportation-chart"));
 
 		 	
 		  /* 	var myPieChart = new Chart(ctx1,{
