@@ -23,8 +23,8 @@ import com.a4tech.shipping.model.ShortestDistLantiAndLongti;
 
 import saveShipping.StoreSpDetails;
 
-@Controller
-public class ShippingDetailController {
+//@Controller
+public class ShippingDetailController {/*
   
 	ShippingMapping shippingMapping;
 	
@@ -71,10 +71,10 @@ public class ShippingDetailController {
 		  double plantLatitude = 0.0;
 		  int intitialDist = 1;
 			  for (PlantDetails plantDetails : plantDetailsList) {
-				/*double distence =	distance(Double.parseDouble(shippingdetail.getLatitude()),
+				double distence =	distance(Double.parseDouble(shippingdetail.getLatitude()),
 							Double.parseDouble(shippingdetail.getLongitude()),
 							Double.parseDouble(plantDetails.getLatitude()), Double.parseDouble(plantDetails.getLongitude()),
-							"K");*/
+							"K");
 				  double distence = 0.0;
 				  try {
 					distence =gmapDist.getDistence(shippingDetail.getLatitude()+","+shippingDetail.getLongitude(), plantDetails.getLatitude()+","+plantDetails.getLongitude());
@@ -101,11 +101,11 @@ public class ShippingDetailController {
 			  shortestDetails.setOrderLatitude(shippingDetail.getLatitude());
 			  shortestDetails.setOrderLongitude(shippingDetail.getLongitude());
 			  StringBuilder allDetails = new StringBuilder();
-				/*allDetails.append(initialDistence).append("##")
+				allDetails.append(initialDistence).append("##")
 						.append("Plant Latitude & Longitude:").append("Latitude: " + plantLatitude).append(":")
 						.append("Longitude: " + plantLangitude).append("Order Latitude & Longitude:")
 						.append("Latitude: " + shippingDetail.getLatitude()).append(":")
-						.append("Longitude: " + shippingDetail.getLongitude());*/
+						.append("Longitude: " + shippingDetail.getLongitude());
 			  allDetails.append(initialDistence).append("##")
 				.append("Plant Details: ").append(plantLangitude).append(",").append(plantLatitude);
 			 shortDist.put(shippingDetail.getDelivary(), allDetails);
@@ -138,9 +138,9 @@ public class ShippingDetailController {
 			Map<String, ShippingDetails> shippingDetailsMap = sd.getAllShippingDetailsMap();
 		  //List<Double> distences = new ArrayList<>();
 		//	ShippingDetails shippingDetail = shippingDetailsMap.get();
-			/*if(shippingDetail == null){
+			if(shippingDetail == null){
 				return "Invaild OrderNo,Please enter vaild OrderNo";
-			}*/
+			}
 		  Map<Double, String> distences = new LinkedHashMap<>();
 		  double initialDistence = 0.0;
 		  Map<String, StringBuilder> shortDist = new HashMap<>();
@@ -149,10 +149,10 @@ public class ShippingDetailController {
 		  int intitialDist = 1;
 		  for (ShippingDetails shippingDetail : shippingDetailsList) {
 			  for (PlantDetails plantDetails : plantDetailsList) {
-				/*double distence =	distance(Double.parseDouble(shippingdetail.getLatitude()),
+				double distence =	distance(Double.parseDouble(shippingdetail.getLatitude()),
 							Double.parseDouble(shippingdetail.getLongitude()),
 							Double.parseDouble(plantDetails.getLatitude()), Double.parseDouble(plantDetails.getLongitude()),
-							"K");*/
+							"K");
 				  double distence = 0.0;
 				  try {
 					distence =gmapDist.getDistence(shippingDetail.getLatitude()+","+shippingDetail.getLongitude(), plantDetails.getLatitude()+","+plantDetails.getLongitude());
@@ -176,11 +176,11 @@ public class ShippingDetailController {
 				intitialDist++;
 			}
 			  StringBuilder allDetails = new StringBuilder();
-				/*allDetails.append(initialDistence).append("##")
+				allDetails.append(initialDistence).append("##")
 						.append("Plant Latitude & Longitude:").append("Latitude: " + plantLatitude).append(":")
 						.append("Longitude: " + plantLangitude).append("Order Latitude & Longitude:")
 						.append("Latitude: " + shippingDetail.getLatitude()).append(":")
-						.append("Longitude: " + shippingDetail.getLongitude());*/
+						.append("Longitude: " + shippingDetail.getLongitude());
 			  allDetails.append(initialDistence).append("##")
 				.append("Plant Details: ").append(plantLangitude).append(",").append(plantLatitude);
 			 shortDist.put(shippingDetail.getDelivary(), allDetails);
@@ -212,9 +212,9 @@ public class ShippingDetailController {
 			Map<String, ShippingDetails> shippingDetailsMap = sd.getAllShippingDetailsMap();
 		  //List<Double> distences = new ArrayList<>();
 		//	ShippingDetails shippingDetail = shippingDetailsMap.get();
-			/*if(shippingDetail == null){
+			if(shippingDetail == null){
 				return "Invaild OrderNo,Please enter vaild OrderNo";
-			}*/
+			}
 		  Map<Double, String> distences = new LinkedHashMap<>();
 		  double initialDistence = 0.0;
 		  Map<String, StringBuilder> shortDist = new HashMap<>();
@@ -309,10 +309,10 @@ public class ShippingDetailController {
 		  for (ShippingDetails shippingdetail : shippingDetailsList) {
 			  int intitialDist = 1;
 			  for (PlantDetails plantDetails : plantDetailsList) {
-				/*double distence =	distance(Double.parseDouble(shippingdetail.getLatitude()),
+				double distence =	distance(Double.parseDouble(shippingdetail.getLatitude()),
 							Double.parseDouble(shippingdetail.getLongitude()),
 							Double.parseDouble(plantDetails.getLatitude()), Double.parseDouble(plantDetails.getLongitude()),
-							"K");*/
+							"K");
 				  double distence = 0.0;
 				  try {
 					distence =gmapDist.getDistence(shippingdetail.getLatitude()+","+shippingdetail.getLongitude(), plantDetails.getLatitude()+","+plantDetails.getLongitude());
@@ -357,4 +357,4 @@ public class ShippingDetailController {
 	public void setShippingMapping(ShippingMapping shippingMapping) {
 		this.shippingMapping = shippingMapping;
 	}
-}
+*/}

@@ -37,6 +37,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Dynatable/0.3.1/jquery.dynatable.js"></script>
+	<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+	
 </head>
 
 <body class="md-skin">
@@ -50,7 +52,7 @@
 							src="img/profile_small.jpg" />
 						</span> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
 							class="clear"> <span class="block m-t-xs"> <strong
-									class="font-bold">Azam Rizvi</strong>
+									class="font-bold"></strong>
 							</span> <span class="text-muted text-xs block">Admin <b
 									class="caret"></b></span>
 						</span>
@@ -68,9 +70,9 @@
 				<li><a href="<c:url value='/getDashboard'/>"><i
 						class="fa fa-th-large"></i> <span class="nav-label">Dashboards
 							Process</span></a></li>
-				<li><a href="<c:url value='/algorithmProcess' />"><i
+				<%-- <li><a href="<c:url value='/algorithmProcess' />"><i
 						class="fa fa-th-large"></i> <span class="nav-label">Algorithm
-							Process</span></a></li>
+							Process</span></a></li> --%>
 				<!-- <li> <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Administration</span><span class="fa arrow"></span></a>
           <ul class="nav nav-second-level collapse">
             <li><a href="collages.html">Collage's</a></li>
@@ -294,6 +296,9 @@
 										<div id="tab-3" class="tab-pane active">
 											<div class="panel-body">
 												<div class="col-lg-9">
+												<button type="button" id="download-pdfToday" >
+  														Download PDF
+													</button>
 													<canvas id="todayCharts" width="400" height="200"></canvas>
 												</div>
 												<div class="col-lg-3">
@@ -355,6 +360,9 @@
 										<div id="tab-4" class="tab-pane">
 											<div class="panel-body">
 												<div class="col-lg-9">
+												<button type="button" id="download-pdfMonths" >
+  														Download PDF
+													</button>
 													<canvas id="monthCharts" width="400" height="200"></canvas>
 
 												</div>
@@ -418,6 +426,9 @@
 										<div id="tab-5" class="tab-pane">
 											<div class="panel-body">
 												<div class="col-lg-9">
+												<button type="button" id="download-pdfYears" >
+  														Download PDF
+													</button>
 													<canvas id="yearCharts" width="400" height="200"></canvas>
 												</div>
 												<div class="col-lg-3">
@@ -499,6 +510,9 @@
 	<div class="ibox float-e-margins">
 								<div class="ibox-title">Material Chart</div>
 								<div class="ibox-content">
+								<button type="button" id="download-pdfMAterial" >
+  														Download PDF
+													</button>
 									<%-- <canvas id="pieMatchart" width="400" height="200"></canvas> --%>
 									<canvas id="pie-chart" width="800" height="450"></canvas>
 								</div>
@@ -508,6 +522,9 @@
 <div class="ibox float-e-margins">
 								<div class="ibox-title">Epod Chart</div>
 								<div class="ibox-content">
+								<button type="button" id="download-pdfEpod" >
+  														Download PDF
+													</button>
 									<%--  <canvas id="pieMatchart2" width="400" height="200"></canvas> --%> 
 									 <canvas id="epodChart" width="800" height="450"></canvas> 
 								</div>
@@ -517,6 +534,9 @@
 <div class="ibox float-e-margins">
 								<div class="ibox-title">Sales Chart</div>
 								<div class="ibox-content">
+								<button type="button" id="download-pdfSales" >
+  														Download PDF
+													</button>
 				 <canvas id="salesChart" width="auto" height="auto"></canvas> 
 				</div>
 				</div>
@@ -975,6 +995,14 @@ $(document).ready(function(){
 
 }
 // Asynchronous Loading
+//donwload pdf from original canvas
+function downloadPDF(selectorId, imageName) {
+  var canvas = document.getElementById(selectorId);
+	var canvasImg = canvas.toDataURL();
+	var pdf = new jsPDF();
+    pdf.addImage(canvasImg, 'JPEG', 0, 0);
+    pdf.save(imageName + ".pdf");
+}
 
 function loadScript() {
   var script = document.createElement('script');
@@ -1330,6 +1358,8 @@ $.getJSON( "getMonthlyOrderCount/", function( json ) {
 						    }
 						});
 				});	
+			
+					 
 		 
 		 var ctx = document.getElementById("myChart");
 
@@ -1360,28 +1390,32 @@ $.getJSON( "getMonthlyOrderCount/", function( json ) {
 		 // We now register the plugin to the chart's plugin service to activate it
 		 Chart.pluginService.register(randomColorPlugin);
 
-		 var myChart = new Chart(ctx, {
-		     type: 'bar',
-		     data: {
-		         labels: ["January", "February", "March", "April", "May", "June"],
-		         datasets: [{
-		             label: '# of Votes',
-		             data: [12, 19, 3, 5, 2, 3],
-		             backgroundColor: 'rgba(255, 99, 132, 0.2)',
-		             borderColor: 'rgba(255,99,132,1)',
-		             borderWidth: 1
-		         }]
-		     },
-		     options: {
-		         scales: {
-		             yAxes: [{
-		                 ticks: {
-		                     beginAtZero: true
-		                 }
-		             }]
-		         }
-		     }
-		 });
+		 document
+		 .getElementById('download-pdfToday')
+		 .addEventListener("click", downloadPDF.bind(this, "todayCharts", "Days-chart"));
+
+		 document
+		 .getElementById('download-pdfMonths')
+		 .addEventListener("click", downloadPDF.bind(this, "monthCharts", "Months-chart"));
+
+
+		 document
+		 .getElementById('download-pdfYears')
+		 .addEventListener("click", downloadPDF.bind(this, "yearCharts", "Years-chart"));
+
+
+		 document
+		 .getElementById('download-pdfMAterial')
+		 .addEventListener("click", downloadPDF.bind(this, "pie-chart", "Material-chart"));
+
+
+		 document
+		 .getElementById('download-pdfEpod')
+		 .addEventListener("click", downloadPDF.bind(this, "epodChart", "Epod-chart"));
+
+		 document
+		 .getElementById('download-pdfSales')
+		 .addEventListener("click", downloadPDF.bind(this, "salesChart", "Sales-chart"));
 
 		 	
 		  /* 	var myPieChart = new Chart(ctx1,{
