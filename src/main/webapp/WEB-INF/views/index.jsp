@@ -48,8 +48,7 @@
 			<ul class="nav metismenu" id="side-menu">
 				<li class="nav-header">
 					<div class="dropdown profile-element">
-						<span> <img alt="image" class="img-circle"
-							src="img/profile_small.jpg" />
+						<span> <img alt="image" src="resources/img/logo.png"/>
 						</span> <a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
 							class="clear"> <span class="block m-t-xs"> <strong
 									class="font-bold"></strong>
@@ -67,7 +66,7 @@
 					</div>
 					<div class="logo-element"></div>
 				</li>
-				<li><a href="<c:url value='/getDashboard'/>"><i
+				<li class="active"><a href="<c:url value='/getDashboard'/>"><i
 						class="fa fa-th-large"></i> <span class="nav-label">Dashboards
 							Process</span></a></li>
 				<%-- <li><a href="<c:url value='/algorithmProcess' />"><i
@@ -296,8 +295,8 @@
 										<div id="tab-3" class="tab-pane active">
 											<div class="panel-body">
 												<div class="col-lg-9">
-												<button type="button" id="download-pdfToday" >
-  														Download PDF
+												<button class="btn btn-success" type="button" id="download-pdfToday" >
+  														Download <i class="fa fa-file-pdf-o"></i>
 													</button>
 													<canvas id="todayCharts" width="400" height="200"></canvas>
 												</div>
@@ -360,8 +359,8 @@
 										<div id="tab-4" class="tab-pane">
 											<div class="panel-body">
 												<div class="col-lg-9">
-												<button type="button" id="download-pdfMonths" >
-  														Download PDF
+												<button class="btn btn-success" type="button" id="download-pdfMonths" >
+  														Download <i class="fa fa-file-pdf-o"></i>
 													</button>
 													<canvas id="monthCharts" width="400" height="200"></canvas>
 
@@ -426,8 +425,8 @@
 										<div id="tab-5" class="tab-pane">
 											<div class="panel-body">
 												<div class="col-lg-9">
-												<button type="button" id="download-pdfYears" >
-  														Download PDF
+												<button class="btn btn-success" type="button" id="download-pdfYears" >
+  														Download <i class="fa fa-file-pdf-o"></i>
 													</button>
 													<canvas id="yearCharts" width="400" height="200"></canvas>
 												</div>
@@ -510,8 +509,8 @@
 	<div class="ibox float-e-margins">
 								<div class="ibox-title">Material Chart</div>
 								<div class="ibox-content">
-								<button type="button" id="download-pdfMAterial" >
-  														Download PDF
+								<button class="btn btn-success" type="button" id="download-pdfMAterial" >
+  														Download <i class="fa fa-file-pdf-o"></i>
 													</button>
 									<%-- <canvas id="pieMatchart" width="400" height="200"></canvas> --%>
 									<canvas id="pie-chart" width="800" height="450"></canvas>
@@ -522,8 +521,8 @@
 <div class="ibox float-e-margins">
 								<div class="ibox-title">Epod Chart</div>
 								<div class="ibox-content">
-								<button type="button" id="download-pdfEpod" >
-  														Download PDF
+								<button class="btn btn-success" type="button" id="download-pdfEpod" >
+  														Download <i class="fa fa-file-pdf-o"></i>
 													</button>
 									<%--  <canvas id="pieMatchart2" width="400" height="200"></canvas> --%> 
 									 <canvas id="epodChart" width="800" height="450"></canvas> 
@@ -534,8 +533,8 @@
 <div class="ibox float-e-margins">
 								<div class="ibox-title">Transportation Chart</div>
 								<div class="ibox-content">
-								<button type="button" id="download-pdfSales" >
-  														Download PDF
+								<button class="btn btn-success" type="button" id="download-pdfSales" >
+  														Download <i class="fa fa-file-pdf-o"></i>
 													</button>
 				 <canvas id="salesChart" width="auto" height="auto"></canvas> 
 				</div>

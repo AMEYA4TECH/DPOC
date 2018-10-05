@@ -129,8 +129,8 @@ public  ArrayList<Truck> getTrucksData() throws ClassNotFoundException {
 							 @Override
 							public void execute(java.sql.Connection connection)
 									throws SQLException {
-								 String query = "SELECT Top 50 * FROM truck_info;";
-								 //String query = "SELECT * FROM truck_info LIMIT 50;";
+								 //String query = "SELECT Top 50 * FROM truck_info;";
+								 String query = "SELECT * FROM truck_info LIMIT 50;";
 							      Statement st =  connection.createStatement();
 							      ResultSet rs = st.executeQuery(query);
 							      

@@ -3,6 +3,7 @@ package com.a4tech.controller;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -105,7 +106,7 @@ public class OrderDetailsController {
 	}
 
 	@RequestMapping("/getDailyOrderCount/")
-	public OneDay getDailyOrderCount() throws ClassNotFoundException{
+	public OneDay getDailyOrderCount() throws ClassNotFoundException, ParseException{
 		
 		OneDay obObj=new OneDay();
 		obObj=orderDao.getDaily();

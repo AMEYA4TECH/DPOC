@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 100;
+  /**font-weight: 100;**/
 }
 h1 {
   font-size: 30px;
@@ -167,7 +167,7 @@ h5 {
   transition: all 0.4s;
 }
 .nav > li.active {
-  border-left: 4px solid #19aa8d;
+  border-left: 4px solid #0054A6;
   background: #293846;
 }
 .nav.nav-second-level > li.active {
@@ -381,7 +381,7 @@ body.canvas-menu .logo-element {
 }
 body.mini-navbar .nav-header {
   padding: 0;
-  background-color: #1ab394;
+  background-color: #0054a6;
 }
 body.canvas-menu .nav-header {
   padding: 33px 25px;
@@ -3909,7 +3909,7 @@ table.table-mail tr td {
   color: #ffffff;
 }
 .progress-bar {
-  background-color: #1ab394;
+  background-color: #0054a6;
 }
 .progress-small,
 .progress-small .progress-bar {
@@ -7805,8 +7805,8 @@ body.md-skin {
   background-color: #ffffff;
 }
 .md-skin .nav-header {
-  background: url("patterns/4.png") no-repeat;
-}
+  background: url("pattern s/4.png") no-repeat;
+} 
 .md-skin .label,
 .md-skin .badge {
   font-family: 'Roboto';
@@ -7844,7 +7844,12 @@ body.md-skin {
 .md-skin .ibox-title,
 .md-skin .ibox-content {
   /*border-style: none;*/
+  font-weight: 500;
 }
+.ibox-title {
+   background: #616161;
+    color: #fff;
+    }
 .md-skin .ibox-title h5 {
   font-size: 15px; /**16px**/
   font-weight: 400;
@@ -7966,7 +7971,7 @@ body.md-skin {
 }
 .md-skin .navbar-fixed-top,
 .md-skin .navbar-static-top {
-  background-color: #1ab394 !important;
+  background-color: #0054A6 !important;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 .md-skin .navbar-static-side {
